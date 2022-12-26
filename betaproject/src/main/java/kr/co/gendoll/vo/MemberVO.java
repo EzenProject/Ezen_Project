@@ -4,5 +4,5 @@ public class MemberVO {
   
 	private String memId;
 	private String memPwd;
-	private String phone; 
+	private String phone;  
 } 
