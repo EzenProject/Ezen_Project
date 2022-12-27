@@ -99,9 +99,12 @@ config 상태
 
 ## 원격 저장소 (Origin)에서 로컬 저장소로
 
-- 가져오기
+- 파일 가져오기
   - git pull --rebase origin main
 
+- 복제하기 
+  - git clone (repository) (directory) 
+ <!-- 로컬 디렉토리는 생략가능 터미널에서 원하는 폴더로 접속시-->
 ---
 
 ## Branch
