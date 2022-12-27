@@ -3,7 +3,7 @@
 	pageEncoding="UTF-8"%>
 <html>
 <head>
-	<title>Home</title>
+	<title>Home</title> 
 </head>
 <body>
 <h2>맞냐고...............</h2>
