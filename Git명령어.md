@@ -61,3 +61,16 @@
 
 - 가져오기
   - git pull --rebase origin main
+
+---
+
+## Branch
+
+- 생성
+  - git branch 브랜치명
+- 생성하고 바로 이동
+  - git branch -d 브랜치명
+- 이동
+  - git checkout 브랜치명
+- 삭제
+  - git branch -d 브랜치명
