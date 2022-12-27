@@ -2,6 +2,8 @@
 # 필수 명령어 정리.
 - 로컬 계정 , 이메일 입력
   - 입력
+    - git config --global user.name '계정이름기입'
+    - git config --global user.email '계정이메일 기입'
   - 초기화
 - 로컬 깃 폴더 생성
   - 생성
