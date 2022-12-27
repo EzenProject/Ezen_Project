@@ -1,17 +1,29 @@
 <!--22.12.26.Mon -->
 # 필수 명령어 정리.
-## 로컬 계정 , 이메일 입력 , 정보
+## 보충 사이트
+Source : [https://chlolisher.tistory.com/137](https://chlolisher.tistory.com/137)
+
+---
+## Config (로컬 계정 , 이메일 입력 , 정보)
 - 입력
   - git config --global user.name '계정이름기입'
   - git config --global user.email '계정이메일 기입'
   - 초기화
+  - git config 삭제하기 
+    - git config --unset user.name
+    - git config --unset user.email
+  
+  - 삭제해도 계속 남아있는 경우 global 옵션을 주어 설정했을 것임, global로 설정된 사용자를 지울 경우 아래와 같이 global 추가
+    - git config --unset --global user.name
+    - git config --unset --global user.email
 
+config 상태
 - local , global ,system
   - 로컬 : 특정 저장소
   - 글로벌 : 전역 , 전체
   - 시스템 : 시스템의 모든 사용자 , 저장소.
 
-
+---
 
 ## 로컬 깃 폴더 생성
   - 깃 폴더 지정 ,생성
@@ -44,8 +56,10 @@
 
   - 푸시
     - git push orgin main
-    - 파일 , 커밋 모두 원격 저장소에 전송
-    - 원격 저장소의 main이라는 항목에 저장하겠다. ( 다른 branch에 넣을 수 있다.)
+      - 파일 , 커밋 모두 원격 저장소에 전송
+      - 원격 저장소의 main이라는 항목에 저장하겠다. ( 다른 branch에 넣을 수 있다.)
+    - git push origin --all
+      - 모든 브랜치 일괄 전송
 
 
 ## 확인 , 검색 , 상태
@@ -68,9 +82,15 @@
 
 - 생성
   - git branch 브랜치명
-- 생성하고 바로 이동
-  - git branch -d 브랜치명
+
 - 이동
   - git checkout 브랜치명
+
 - 삭제
   - git branch -d 브랜치명
+
+- 확인
+  - git brach -a
+
+- 이름 변경
+  - git branch -m [브랜치 명] [새로운 브랜치명]
