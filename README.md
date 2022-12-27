@@ -20,4 +20,5 @@
   * (추가)
 * **결제**
   * (추가)
+## 전체적인 흐름
 ![쇼핑몰 웹 사이트](https://user-images.githubusercontent.com/117875530/209609656-da1edb1e-705f-4d50-bf78-f582721c3c54.jpeg)
