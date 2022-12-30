@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	line-height: 20px;
+	font-size: 12px;
+}
+
+nav ul li {
+	list-style-type: none;
+	display: inline;
+	font-weight: bold;
+	margin-right: 20px;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+nav ul li a:hover {
+	background-color: pink;
+}
+
+#container {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+header {
+	width: 100%;
+	height: 130px;
+	background-color: rgb(231, 231, 231);
+	position: relative;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
+
+.hdTop {
+	/* 	border: 1px solid black; */
+	height: 30px;
+	position: relative;
+}
+
+.hdTop nav {
+	display: flex;
+	position: absolute;
+	top: 0;
+	right: -10px;
+}
+
+.hdBottom {
+	/* 	border: 1px solid black; */
+	height: 30px;
+	position: relative;
+}
+
+.hdBottom nav {
+	display: flex;
+	position: absolute;
+	bottom: 0;
+	right: -10px;
+}
+
+.hdMid {
+	/* border: 1px solid black; */
+	height: 64px;
+	position: relative;
+}
+
+.hdMid h1 {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	font-style: italic;
+}
+
+.searchTab {
+	/* border: 1px solid black; */
+	position: absolute;
+	top: 30px;
+	left: 450px;
+}
+
+.searchTab input {
+	width: 300px;
+	font-size: 30px;
+	border: none;
+	border-bottom: 3px solid black;
+	background-color: rgb(231, 231, 231);
+}
+
+.searchTab button {
+	border: none;
+	background-color: rgb(231, 231, 231);
+}
+
+.searchTab button :hover {
+	cursor: pointer;
+}
+
+.contents {
+	padding: 35px;
+}
+
+.product {
+	height: 2800px;
+	
+}
+
+.productImage {
+	height: 520px;
+	width: 520px;
+	border: 1px solid black;
+}
+
+.productNotice {
+	height: 60px;
+	width: 520px;
+	border: 1px solid black;
+	margin-top: 20px;
+}
+
+.productLeft {
+	position: fixed;
+	float: left;
+	height: 520px;
+	width: 520px;
+	border: 1px solid black;
+}
+
+.productRight {
+	width: 520px;
+	float: right;
+	padding-left: 30px;
+	border-left: 1px solid silver;
+}
+
+.productRight button{
+	height: 60px;
+	width: 200px;
+	font-size: 1.6em;
+	border-radius: 10px;
+	margin-top: 20px;
+}
+.buy{
+	background-color:#EF6253;
+	border: none;
+	color: white;
+}
+
+.sell{
+	background-color:#41B979;
+	border: none;
+	color: white;
+}
+.section article {
+	margin-bottom: 30px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	padding: 10px;
+	height: 400px;
+	text-align: center;
+}
+
+.section article div {
+	border: 1px solid black;
+	width: 230px;
+	height: 300px;
+	float: left;
+	margin: 0 20px;
+}
+
+footer {
+	clear: both;
+	width: 100%;
+	background-color: #333;
+	color: white;
+	text-align: center;
+	height: 60px;
+}
+
+footer p {
+	font-size: 1em;
+	line-height: 60px;
+}
+
+.productLeftChange {
+	position: relative;
+	top: 2090px;
+	border: 1px solid black;
+	float: left;
+	height: 520px;
+	width: 520px;
+}
+</style>
+</head>
+
+<body>
+	<div id="container">
+		<header>
+			<div class="hdTop">
+				<nav>
+					<ul>
+						<li><a href="#">고객센터</a></li>
+						<li style="display: none;"><a href="#">관심상품</a></li>
+						<li style="display: none;"><a href="#">마이페이지</a></li>
+						<li><a href="#" onclick="">로그인</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="hdMid">
+				<h1>
+					<a href="./Q4.html">PARIS</a>
+				</h1>
+				<div class="searchTab">
+					<input type="search" placeholder="search..." />
+					<button>
+						<img src="./images/button2.png" alt=""
+							style="height: 26px; width: 40px;" />
+					</button>
+				</div>
+			</div>
+			<div class="hdBottom">
+				<nav>
+					<ul>
+						<li><a href="#">STYLE</a></li>
+						<li><a href="./Q5.html">SHOP</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div class="contents">
+			<div class="product">
+				<div id="productLeft" class="productLeft" >
+					<!-- <div class="productImage">
+						<h1>제품이미지</h1>
+					</div>
+					<div class="productNotice">
+						<h4>상품 특이사항 안내</h4>
+						<p>해당상품의 개체별 특이사항을 안내드립니다.</p>
+					</div> -->
+				</div>
+				<div  id="productRight" class="productRight">
+					<div>
+						<h2>제품 브랜드</h2>
+						<br />
+						<h3>제품명</h3>
+						<button class="buy">구매</button>
+						<button class="sell">판매</button>
+						<br />
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et
+						delectus minus consequatur laboriosam consectetur nobis libero
+						eveniet pariatur perferendis natus repudiandae magni omnis atque
+						numquam voluptate. Consectetur consequuntur modi nihil hic
+						repudiandae quidem reprehenderit ea voluptatem quibusdam impedit
+						cumque aperiam dolor accusantium error repellendus expedita
+						assumenda sapiente sed vero laborum soluta adipisci atque? Sunt
+						reiciendis ducimus enim quae veniam non placeat et alias incidunt
+						minima asperiores ab voluptas numquam porro consequatur. Non
+						repudiandae saepe natus sint quasi libero ullam quos suscipit odio
+						voluptate quod earum vitae voluptatum et eaque. Deleniti voluptas
+						quae reprehenderit aliquid maiores eius modi consequatur
+						architecto unde corrupti consequuntur culpa repellat quia at
+						cupiditate nobis libero iste illum atque quibusdam? Accusamus ex
+						quidem harum error quisquam debitis nemo inventore explicabo
+						soluta autem sapiente quas mollitia consequatur quod aliquam
+						dignissimos eveniet delectus repellendus velit fugit voluptatum at
+						eius facere distinctio nisi nulla nostrum enim! Assumenda commodi
+						optio veniam fugiat doloremque suscipit omnis. Temporibus cumque
+						delectus nesciunt odio ut animi iusto consequatur debitis sunt
+						illum voluptatibus saepe dolore libero eaque error quia ad!
+						Repellendus et consequatur earum nisi consectetur repellat unde
+						amet nam voluptatibus quae architecto ipsam sequi ex nemo
+						officiis? Cum alias nesciunt voluptate consectetur nam illum nemo
+						omnis animi pariatur eos. Adipisci tenetur veritatis vitae et
+						tempora commodi saepe consequuntur. Porro facere quae tenetur nam
+						culpa repudiandae aperiam hic consequatur dignissimos optio
+						praesentium modi dolores cupiditate quia distinctio suscipit
+						debitis quis expedita maiores error eveniet et quas ipsum atque
+						quibusdam totam reiciendis qui id ullam voluptatibus voluptatum
+						doloremque rem impedit earum ab molestias laborum quod deserunt in
+						ut eius explicabo. Blanditiis magnam quis placeat facere
+						laudantium consequuntur quo cum quas veniam repellat aspernatur
+						assumenda porro maiores sequi itaque ea vero sint corporis tenetur
+						ipsam error illum delectus iure possimus eveniet nulla aut enim
+						nemo temporibus maxime. Facere ullam odit optio libero earum
+						tempora ut cupiditate dicta consequatur sit et alias. Iusto
+						laudantium pariatur quia quae repudiandae fugiat blanditiis minus
+						vero deleniti nisi dolor quis odit necessitatibus exercitationem
+						expedita quos quisquam. Quidem odio minus ullam eveniet totam
+						atque quibusdam iste repellendus nulla explicabo omnis hic
+						voluptate quod architecto eum asperiores optio. Iste illo eos esse
+						commodi suscipit sint totam ducimus quas dignissimos temporibus
+						debitis unde! Dignissimos voluptatibus ullam porro esse ea quia
+						odit nobis quos eos minus ipsam architecto a laudantium quisquam
+						delectus incidunt voluptas adipisci cumque sapiente expedita
+						libero autem illo consequatur aliquam odio vero repellendus
+						provident natus corporis possimus consectetur ducimus tempore
+						accusantium. Quae quos at ex placeat velit! Facere laboriosam modi
+						eveniet sequi deleniti blanditiis accusantium eaque animi
+						perferendis ipsum corporis architecto cum eligendi deserunt
+						laborum recusandae nesciunt. Officia facere fugit est consequuntur
+						labore dicta accusamus autem recusandae delectus ducimus corporis
+						accusantium aut aliquam quis amet explicabo architecto blanditiis
+						quibusdam sunt sequi laboriosam nam eveniet aperiam voluptatem
+						ullam velit provident possimus ipsa quasi ipsam reprehenderit
+						doloremque magnam quas iure debitis culpa laudantium consequatur
+						minus maxime tempore laborum cupiditate maiores quam odio mollitia
+						eius. At similique assumenda et consequuntur minima error
+						cupiditate earum accusamus itaque nihil eos fugiat illo
+						praesentium neque sapiente. Esse tempora totam voluptate ad quod
+						aliquam dolorum temporibus sapiente asperiores eum aliquid debitis
+						at. Expedita quidem mollitia nemo quibusdam asperiores architecto
+						deleniti est perferendis officiis distinctio labore illum
+						perspiciatis laboriosam neque eius voluptate accusamus quos ullam
+						magni autem. Temporibus iusto dolor veniam excepturi iste commodi
+						magnam velit ducimus delectus ea minima aperiam quasi in qui quas
+						beatae maiores obcaecati quaerat iure minus soluta sed molestias
+						explicabo modi perferendis necessitatibus dignissimos cupiditate
+						nihil voluptatibus unde nesciunt vel sequi voluptate amet enim
+						impedit animi consequatur nam quis tenetur dolores inventore
+						dolorem corrupti reprehenderit quam libero. Dicta dolore
+						perferendis eligendi enim cumque quibusdam? Fugiat totam enim ipsa
+						dicta autem quas quasi ducimus sapiente possimus magnam harum
+						accusamus hic. Tempore nesciunt ex accusamus fugit aliquam at
+						dolores nihil iusto ab dolore molestiae quia beatae. Magnam itaque
+						provident blanditiis corporis voluptatibus similique voluptatem
+						iure ipsa voluptas delectus sint deleniti perferendis quos amet
+						quia impedit labore adipisci fuga laboriosam at nostrum officia
+						sapiente placeat! Delectus facere mollitia quasi hic repellat
+						suscipit cum a molestiae illo laboriosam. Ullam aspernatur totam
+						nam est sequi autem eligendi beatae animi esse doloribus sint odio
+						eum ipsum? Neque quam eos sed cupiditate animi dolor et culpa
+						earum quisquam fugit blanditiis quibusdam tempore adipisci quas
+						alias nostrum ad. Quas qui commodi at veniam ad magni iusto
+						laudantium expedita deleniti exercitationem temporibus odio ea.
+						Laboriosam numquam ut tenetur enim nam incidunt quod ullam
+						quisquam architecto quasi accusamus quam veniam? Autem ex
+						voluptatem modi hic esse enim reprehenderit pariatur voluptatum
+						accusamus veniam quibusdam libero impedit commodi officiis
+						voluptas sint minima suscipit! Aperiam tempora molestiae fugit
+						modi dolorem reprehenderit quam inventore qui dolores cum eius
+						pariatur ab culpa accusantium excepturi eos id. Facere deleniti
+						assumenda consequatur et saepe officiis pariatur qui quod tempore
+						voluptatibus! Minima et esse repudiandae ipsum dolorum hic
+						cupiditate dolorem aliquam accusamus quisquam fugiat nesciunt
+						magni dolor temporibus voluptas similique in quae sed cum
+						consequuntur maxime officiis ipsam laboriosam iusto veniam tenetur
+						animi repellat. Maiores alias ea architecto rerum nihil ex
+						quisquam voluptate libero aliquam perferendis aut deleniti quo
+						illum delectus quas vel cupiditate repudiandae quam iste aliquid
+						necessitatibus consectetur inventore ad nemo fuga dignissimos odit
+						distinctio doloribus aspernatur quia. Dicta quas assumenda cumque
+						quisquam neque? Qui cumque consequuntur magnam tenetur labore
+						dignissimos repudiandae ea odit laboriosam sit. Quisquam
+						recusandae facilis similique commodi quasi tempora ut distinctio
+						laborum aperiam sit id perspiciatis laudantium molestias eius
+						natus fuga corrupti cumque nesciunt minima aspernatur voluptates
+						consequuntur quaerat vel quo unde obcaecati cupiditate doloremque
+						adipisci minus voluptate ab dolorum asperiores excepturi. Odio
+						animi deserunt quia ducimus soluta iusto inventore amet sequi
+						maxime dolores assumenda esse adipisci hic. Aut unde nam nobis
+						labore optio enim ratione aliquam magni dicta possimus praesentium
+						commodi tempora ipsa adipisci eius repellendus laboriosam soluta
+						deserunt. Laudantium sunt doloribus officia atque assumenda
+						delectus sed exercitationem quos explicabo fuga non itaque
+						repudiandae ut omnis veniam voluptatibus amet saepe quas fugiat
+						repellat blanditiis ipsam tenetur alias quia natus quidem hic
+						adipisci. Harum sequi nostrum exercitationem dicta necessitatibus.
+					</div>
+				</div>
+			</div>
+			<div class="section">
+				<hr />
+				<br />
+				<h2>인기STYLE</h2>
+				<article class="style">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</article>
+
+				<h2>땡띵땡 브랜드 관련상품</h2>
+				<article class="style">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</article>
+			</div>
+		</div>
+		<footer>
+			<p>
+				Copyright <span>kknjso@naver.com</span>
+			</p>
+		</footer>
+	</div>
+	<script>
+		let productRight = document.querySelector(".productRight");
+		let productRightHeight = productRight.offsetHeight;
+
+		window.onscroll = function() {
+			let windowTop = window.scrollY;
+			let productLeft = document.getElementById("productLeft")
+			if (windowTop >= (productRightHeight)-(document.getElementById("productLeft").clientHeight)) {
+				productLeft.classList.add("productLeftChange");
+				productLeft.classList.remove("productLeft");
+			} else { 
+				productLeft.classList.remove("productLeftChange");
+				productLeft.classList.add("productLeft");
+			}
+		};
+	</script> 
+</body>
+</html>
