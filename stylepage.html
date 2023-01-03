@@ -79,10 +79,10 @@ header {
 	bottom: 0;
 }
 
-.click {
+.is_on {
 	padding: 8px 16px;
 	border-radius: 50px;
-	background-color: #222222;
+	background-color: tomato;
 	color: white;
 }
 
@@ -113,15 +113,21 @@ aside a {
 }
 
 .contents {
-	height: 1800px;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;  //얘 때문에 한줄에 4개됨
+	width: 1200px;  
+	justify-content: space-between;
+	
+	
 }
 
 .cardContainer {
 	border: 1px solid black;
 	width: 230px;
 	height: 300px;
-	float: left;
 	margin: 10px 20px 40px 20px;
+
 }
 
 .cardimage {
@@ -168,10 +174,10 @@ footer a {
 					<a href="./Q4.html">PARIS</a>
 				</h1>
 				<div class="hdMidnav">
-					<nav>
-						<ul>
-							<li><a href="#" class="nonClick">인기</a></li>
-							<li><a href="#" class="nonClick">최신</a></li>
+					<nav class="tab_menu">
+						<ul class="list">
+							<li class="is_on"><a href="#" class="btn">인기</a></li>
+							<li><a href="#" class="btn">최신</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -192,7 +198,6 @@ footer a {
 				href="#" class=button>#태그</a> <a href="#" class=button>#구현</a>
 		</aside>
 		<div class="contents">
-			<div>
 				<div class="cardContainer">
 					<div class="cardimage"></div>
 					<div class="cardcontent"></div>
@@ -270,7 +275,6 @@ footer a {
 					<div class="cardimage"></div>
 					<div class="cardcontent"></div>
 				</div>
-			</div>
 		</div>
 		<footer>
 			<span>ⓒ copyright</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span><a
@@ -278,11 +282,31 @@ footer a {
 		</footer>
 	</div>
 	<script>
-    var nonClick = document.getElementsByClassName("nonClick");
-
-    function handleClick(event) {
-
-      if (event.target.classList[1] === "click") {
+	const tabList = document.querySelectorAll('.tab_menu .list li');
+	for(var i = 0; i < tabList.length; i++){
+	  tabList[i].querySelector('.btn').addEventListener('click', function(e){
+	    e.preventDefault();
+	    for(var j = 0; j < tabList.length; j++){
+	      tabList[j].classList.remove('is_on');
+	    }
+	    this.parentNode.classList.add('is_on');
+	  });
+	}
+/*     let nonClick = document.querySelector(".nonClick");
+	let click = document.querySelector(".click")
+	
+		click.addEventListener("click", function(){
+			click.classList.remove("click")
+			nonClick.classList.add("click")	
+		})
+		nonClick.addEventListener("click", function(){
+			click.classList.remove("click")
+			nonClick.classList.add("click")
+			
+		})
+		 */
+/* 
+      if (event.target.classList === "click") {
         event.target.classList.remove("click");
       } else {
         for (var i = 0; i < nonClick.length; i++) {
@@ -298,7 +322,7 @@ footer a {
         nonClick[i].addEventListener("click", handleClick);
       }
     }
-
+ */
     init();
     </script>
 </body>
