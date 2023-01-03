@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="keyword" content="이부분은 현재페이지의 가장 중요한 키워드 8개정도 나열" />
+<meta name="description" content="이 페이지를 설명할수있는 문장 2개정도 여기에 작성" />
+<title>페이지(싸이트) 대표하는 단어나 문장 입력</title>
+
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+header nav ul li {
+	list-style-type: none;
+	display: inline;
+	font-weight: bold;
+	margin-right: 20px;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+#container {
+	width: 1200px;
+	margin: 0 auto;
+}
+header {
+	width: 100%;
+	height: 130px;
+	background-color: rgb(231, 231, 231);
+	text-align: center;
+	position: relative;
+	position: sticky;
+	top: 0;
+	z-index: 99;
+} 
+
+.hdTop {
+	/* 	border: 1px solid black; */
+	height: 30px;
+	position: relative;
+}
+
+.hdTop nav {
+	display: flex;
+	position: absolute;
+	top: 0;
+	right: -10px;
+} 
+.navBar {
+	/* border: 1px solid black; */
+	height: 30px;
+	position: relative;
+	margin-top: 20px;
+}
+
+.navBar nav {
+	display: flex;
+	position: absolute;
+	left: 30px;
+}
+
+.navBar nav ul li {
+	list-style-type: none;
+	display: inline;
+	font-weight: bold;
+	margin-right: 50px;
+	font-size: 20px; 
+	border-radius: 5px;
+}
+.hdMid {
+	/* border: 1px solid black; */
+	height: 64px;
+	position: relative;
+}
+
+.hdMid h1 {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	font-style: italic;
+}
+.hdBottom {
+	/* 	border: 1px solid black; */
+	height: 30px;
+	position: relative;
+}
+
+.hdBottom nav {
+	display: flex;
+	position: absolute;
+	bottom: 0;
+	right: -10px;
+}
+#shophome{
+	position: absolute;
+ 	left: 500px; 
+ 	top: 0;
+ 	font-size:60px; 
+}
+.searchTab {
+	/* border: 1px solid black; */
+	display:none;
+	position: absolute;
+	top: 30px;
+	left: 450px;
+}
+
+.searchTab input {
+	width: 300px;
+	font-size: 30px;
+	border: none;
+	border-bottom: 3px solid black;
+	background-color: rgb(231, 231, 231);
+}
+
+.searchTab button {
+	border: none;
+	background-color: rgb(231, 231, 231);
+}
+ 
+.searchTab button :hover {
+	cursor: pointer;
+}
+.inner {
+	margin-top: 10px;
+	display: flex;
+}
+
+.inner nav {
+	width: 20%;
+	margin-top: 60px;
+}
+
+.inner nav>ul {
+	text-align: center;
+}
+
+.inner nav>ul>li {
+	margin-bottom: 10px;
+	width: 100%;
+	height: 50px;
+	font-size: 1.2em;
+	line-height: 50px;
+	border: 1px solid black;
+	border-radius: 20px;
+	list-style: none;
+} 
+section {
+	margin: 0 auto;
+	width: 100%;
+	margin-top: 30px;
+	margin-left: 20px;
+}
+
+section article {
+	margin-bottom: 30px;
+	padding: 10px;
+	/* border: 1px solid #ccc; */
+	padding: 10px;
+	height: 1200px;
+	text-align: center;
+}
+
+section article div {
+	border: 1px solid black;
+	width: 200px;
+	height: 200px;
+	float: left;
+	margin: 18px;
+}
+
+footer {
+	background-color: gray;
+	color: white;
+	height: 70px;
+	text-align: center;
+	line-height: 70px;
+	margin-top: 10px;
+}
+
+footer a {
+	color: white;
+}
+</style>
+
+</head>
+<body>
+	<div id="container">
+ 
+		<header> 
+			<div class="hdTop">
+				<nav>
+					<ul>
+						<li><a href="#">고객센터</a></li>
+						<li style="display: none;"><a href="#">관심상품</a></li>
+						<li style="display: none;"><a href="#">마이페이지</a></li>
+						<li><a href="./Q6.html">로그인</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="hdMid">
+				<h1>
+					<a href="./Q4.html">PARIS</a>
+				</h1>
+				<h1 id="shophome">SHOP</h1>
+				<div class="searchTab">
+					<input type="search" placeholder="search..." />
+					<button>
+						<img src="./images/button2.png" alt=""
+							style="height: 26px; width: 40px;" /> 
+					</button>
+				</div>
+			</div>
+			<div class="hdBottom">
+				<nav>
+					<ul>
+						<li><a href="#">STYLE</a></li>
+						<li><a href="./Q5.html">SHOP</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div class="navBar">
+			<nav>
+				<ul>
+					<li><a href="#">신발</a></li>
+					<li><a href="#">의류</a></li>
+					<li><a href="#">악세서리</a></li>
+					<li><a href="#">라이프</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class=inner>
+			<nav>
+				<ul>
+					<li><a href="">카테고리</a></li>
+					<li><a href="">브랜드</a></li>
+					<li><a href="">컬렉션</a></li>
+					<li><a href="">가격</a></li>
+					<li><a href="">사이즈</a></li>
+					<li><a href="">성별</a></li>
+				</ul>
+			</nav>
+
+			<section>
+				<article class="atone">
+
+					<div> <a href="./detail.html"><img alt="" src="./images/htmlimg.jpg" style="width:200px; height: 200px;"></a></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+
+				</article>
+
+			</section>
+
+		</div>
+		<footer>
+			<span>ⓒ copyright</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span><a
+				href="#">kknjso@naver.com</a></span>
+		</footer>
+	</div>
+</body>
+</html>
