@@ -12,6 +12,11 @@
 	margin: 0;
 	padding: 0;
 }
+
+li {
+	list-style-type: none;
+}
+
 header nav ul li {
 	list-style-type: none;
 	display: inline;
@@ -22,12 +27,14 @@ header nav ul li {
 a {
 	color: black;
 	text-decoration: none;
+	margin-left: 4px;
 }
 
 #container {
 	width: 1200px;
 	margin: 0 auto;
 }
+
 header {
 	width: 100%;
 	height: 130px;
@@ -37,7 +44,7 @@ header {
 	position: sticky;
 	top: 0;
 	z-index: 99;
-} 
+}
 
 .hdTop {
 	/* 	border: 1px solid black; */
@@ -50,7 +57,8 @@ header {
 	position: absolute;
 	top: 0;
 	right: -10px;
-} 
+}
+
 .navBar {
 	/* border: 1px solid black; */
 	height: 30px;
@@ -69,9 +77,10 @@ header {
 	display: inline;
 	font-weight: bold;
 	margin-right: 50px;
-	font-size: 20px; 
+	font-size: 20px;
 	border-radius: 5px;
 }
+
 .hdMid {
 	/* border: 1px solid black; */
 	height: 64px;
@@ -84,6 +93,7 @@ header {
 	top: 10px;
 	font-style: italic;
 }
+
 .hdBottom {
 	/* 	border: 1px solid black; */
 	height: 30px;
@@ -96,15 +106,17 @@ header {
 	bottom: 0;
 	right: -10px;
 }
-#shophome{
+
+#shophome {
 	position: absolute;
- 	left: 500px; 
- 	top: 0;
- 	font-size:60px; 
+	left: 500px;
+	top: 0;
+	font-size: 60px;
 }
+
 .searchTab {
 	/* border: 1px solid black; */
-	display:none;
+	display: none;
 	position: absolute;
 	top: 30px;
 	left: 450px;
@@ -122,34 +134,61 @@ header {
 	border: none;
 	background-color: rgb(231, 231, 231);
 }
- 
+
 .searchTab button :hover {
 	cursor: pointer;
 }
+
 .inner {
 	margin-top: 10px;
 	display: flex;
 }
 
-.inner nav {
-	width: 20%;
-	margin-top: 60px;
+.filter {
+	margin-top: 50px;
+	width: 170px;
 }
 
-.inner nav>ul {
-	text-align: center;
+.filter-status {
+	line-height: 20px;
+	margin-bottom: 30px;
 }
 
-.inner nav>ul>li {
+.filter-unchecked {
+	font-size: 0.7em;
+	float: right;
+	color: silver;
+	border-bottom: 1px solid silver;
+	line-height: 20px;
+}
+.filter-unchecked:hover {
+	cursor: pointer;
+}
+
+.filter-title {
 	margin-bottom: 10px;
-	width: 100%;
-	height: 50px;
-	font-size: 1.2em;
-	line-height: 50px;
-	border: 1px solid black;
-	border-radius: 20px;
-	list-style: none;
-} 
+}
+
+
+.menu {
+	margin-bottom: 2px;
+}
+
+.menu-list, .menu-list3, .menu-list4, .menu-list5, .menu-list6,
+	.menu-list7 {
+	display: none;
+	margin-bottom: 10px;
+}
+
+.menu-list2 {
+	display: none;
+	margin-left: 10px;
+}
+
+span {
+	margin-left: 4px;
+}
+
 section {
 	margin: 0 auto;
 	width: 100%;
@@ -191,8 +230,8 @@ footer a {
 </head>
 <body>
 	<div id="container">
- 
-		<header> 
+
+		<header>
 			<div class="hdTop">
 				<nav>
 					<ul>
@@ -212,7 +251,7 @@ footer a {
 					<input type="search" placeholder="search..." />
 					<button>
 						<img src="./images/button2.png" alt=""
-							style="height: 26px; width: 40px;" /> 
+							style="height: 26px; width: 40px;" />
 					</button>
 				</div>
 			</div>
@@ -236,21 +275,137 @@ footer a {
 			</nav>
 		</div>
 		<div class=inner>
-			<nav>
-				<ul>
-					<li><a href="">카테고리</a></li>
-					<li><a href="">브랜드</a></li>
-					<li><a href="">컬렉션</a></li>
-					<li><a href="">가격</a></li>
-					<li><a href="">사이즈</a></li>
-					<li><a href="">성별</a></li>
-				</ul>
-			</nav>
+			<div class="filter">
+				<div class="filter-status">
+					<b><span>필터</span></b> <span class="filter-unchecked"
+						onclick="javascript:location.href='javascript:unchecked();'">모두
+						해제</span>
+				</div>
+				<div class="filter-list">
+					<div class="filter-title">
+						<b><a href="javascript:display();">카테고리</a></b>
+					</div>
+					<div class="filter-menu">
+						<ul class="menu-list">
+							<li class="menu"><input id="menu-link" class="menu-link"
+								type="checkbox" name="category"
+								onclick="NoMultiChk(this),display2()" /><label for="menu-link"><span>신발</span></label>
+
+								<ul id="menu-list2" class="menu-list2">
+									<li class="menu"><input class="box" id="sneakers"
+										type="checkbox" name="category" onclick="NoMultiChk(this)" /><label
+										for="sneakers"><span>스니커즈</span></label></li>
+									<li class="menu"><input class="box" id="boots"
+										type="checkbox" name="category" onclick="NoMultiChk(this)" /><label
+										for="boots"><span>부츠</span></label></li>
+									<li class="menu"><input class="box" id="derby"
+										type="checkbox" name="category" onclick="NoMultiChk(this)" /><label
+										for="derby"><span>더비/레이스업</span></label></li>
+									<li class="menu"><input class="box" id="loafer"
+										type="checkbox" name="category" onclick="NoMultiChk(this)" /><label
+										for="loafer"><span>로퍼/플랫</span></label></li>
+									<li class="menu"><input class="box" id="sandal"
+										type="checkbox" name="category" onclick="NoMultiChk(this)" /><label
+										for="sandal"><span>샌들/슬리퍼</span></label></li>
+								</ul></li>
+						</ul>
+					</div>
+				</div>
+				<hr />
+				<div class="filter-title">
+					<b><a href="javascript:display3();">브랜드</a></b>
+				</div>
+				<div class="filter-menu">
+					<ul class="menu-list3">
+						<li class="menu"><input class="box" id="adidas"
+							type="checkbox" value="아디다스" name="아디다스" /><label for="adidas"><span>아디다스</span></label></li>
+						<li class="menu"><input class="box" id="nike" type="checkbox"
+							value="나이키" name="나이키" /><label for="nike"><span>나이키</span></label></li>
+					</ul>
+				</div>
+
+				<hr />
+				<div class="filter-title">
+					<b><a href="javascript:display4();">컬렉션</a></b>
+				</div>
+				<div class="filter-menu">
+					<ul class="menu-list4">
+						<li class="menu"><input class="box" id="Acollection"
+							type="checkbox" value="A컬렉션" name="A컬렉션" /><label
+							for="Acollection"><span>A컬렉션</span></label></li>
+						<li class="menu"><input class="box" id="Bcollection"
+							type="checkbox" value="B컬렉션" name="B컬렉션" /><label
+							for="Bcollection"><span>B컬렉션</span></label></li>
+					</ul>
+				</div>
+				<hr />
+				<div class="filter-title">
+					<b><a href="javascript:display5();">가격</a></b>
+				</div>
+				<div class="filter-menu">
+					<ul class="menu-list5">
+						<li class="menu"><input class="box" id="price1"
+							type="checkbox" value="10만원이하" name="10만원이하" /><label
+							for="price1"><span>10만원 이하</span></label></li>
+						<li class="menu"><input class="box" id="price2"
+							type="checkbox" value="10만원-30만원이하" name="10만원-30만원이하" /><label
+							for="price2"><span>10만원 - 30만원 이하</span></label></li>
+						<li class="menu"><input class="box" id="price3"
+							type="checkbox" value="30만원-50만원이하" name="30만원-50만원이하" /><label
+							for="price3"><span>30만원 - 50만원 이하</span></label></li>
+						<li class="menu"><input class="box" id="price4"
+							type="checkbox" value="50만원이상" name="50만원이상" /><label
+							for="price4"><span>50만원 이상</span></label></li>
+
+					</ul>
+				</div>
+				<hr />
+				<div class="filter-title">
+					<b><a href="javascript:display6();">사이즈</a></b>
+				</div>
+				<div class="filter-menu">
+					<ul class="menu-list6">
+						<li class="menu"><input class="box" id="220" type="checkbox"
+							value="220" name="220" /><label for="220"><span>220</span></label></li>
+						<li class="menu"><input class="box" id="240" type="checkbox"
+							value="240" name="240" /><label for="240"><span>240</span></label></li>
+						<li class="menu"><input class="box" id="260" type="checkbox"
+							value="260" name="260" /><label for="260"><span>260</span></label></li>
+						<li class="menu"><input class="box" id="280" type="checkbox"
+							value="280" name="280" /><label for="280"><span>280</span></label></li>
+
+					</ul>
+				</div>
+				<hr />
+				<div class="filter-title">
+					<b><a href="javascript:display7();">성별</a></b>
+				</div>
+				<div class="filter-menu">
+					<ul class="menu-list7">
+						<li class="menu"><input class="box" id="man" type="checkbox"
+							value="남자" name="gender" onclick="NoMultiChk2(this)" /><label
+							for="man"><span>남자</span></label></li>
+						<li class="menu"><input class="box" id="woman"
+							type="checkbox" value="여자" name="gender"
+							onclick="NoMultiChk2(this)" /><label for="woman"><span>여자</span></label></li>
+						<li class="menu"><input class="box" id="kid" type="checkbox"
+							value="키즈" name="gender" onclick="NoMultiChk2(this)" /><label
+							for="kid"><span>키즈</span></label></li>
+					</ul>
+				</div>
+				<div>
+					<hr />
+					<button>필터링하기</button>
+				</div>
+			</div>
 
 			<section>
 				<article class="atone">
 
-					<div> <a href="./detail.html"><img alt="" src="./images/htmlimg.jpg" style="width:200px; height: 200px;"></a></div>
+					<div>
+						<a href="./detail.html"><img alt="" src="./images/htmlimg.jpg"
+							style="width: 200px; height: 200px;"></a>
+					</div>
 					<div></div>
 					<div></div>
 					<div></div>
@@ -281,5 +436,104 @@ footer a {
 				href="#">kknjso@naver.com</a></span>
 		</footer>
 	</div>
+	<script type="text/javascript">
+		function unchecked() {
+			var boxs = document.getElementsByClassName("box");
+			document.querySelector(".menu-link").checked = false;
+			for (var i = 0; i < boxs.length; i++) {
+				var box = boxs.item(i);
+				box.checked = false;
+			}
+
+		}
+
+		function display() {
+			var con = document.querySelector(".menu-list");
+			if (con.style.display == 'none') {
+				con.style.display = 'block';
+			} else {
+				con.style.display = 'none';
+			}
+		}
+		con.addEventListener("click", display);
+
+		function display2() {
+			var chkVal = document.getElementById('menu-link');
+			var OnOffDiv = document.getElementById('menu-list2');
+
+			if (chkVal.checked == true) {
+				OnOffDiv.style.display = "block";
+			} else {
+				OnOffDiv.style.display = "none";
+			}
+		}
+
+		function display3() {
+			var con3 = document.querySelector(".menu-list3");
+			if (con3.style.display == 'none') {
+				con3.style.display = 'block';
+			} else {
+				con3.style.display = 'none';
+			}
+		}
+		con3.addEventListener("click", display3);
+
+		function display4() {
+			var con4 = document.querySelector(".menu-list4");
+			if (con4.style.display == 'none') {
+				con4.style.display = 'block';
+			} else {
+				con4.style.display = 'none';
+			}
+		}
+		con4.addEventListener("click", display4);
+
+		function display5() {
+			var con5 = document.querySelector(".menu-list5");
+			if (con5.style.display == 'none') {
+				con5.style.display = 'block';
+			} else {
+				con5.style.display = 'none';
+			}
+		}
+		con5.addEventListener("click", display5);
+
+		function display6() {
+			var con6 = document.querySelector(".menu-list6");
+			if (con6.style.display == 'none') {
+				con6.style.display = 'block';
+			} else {
+				con6.style.display = 'none';
+			}
+		}
+		con6.addEventListener("click", display6);
+
+		function display7() {
+			var con7 = document.querySelector(".menu-list7");
+			if (con7.style.display == 'none') {
+				con7.style.display = 'block';
+			} else {
+				con7.style.display = 'none';
+			}
+		}
+		con7.addEventListener("click", display7);
+
+		function NoMultiChk(chk) {
+			let obj = document.getElementsByName("category");
+			for (var i = 0; i < obj.length; i++) {
+				if (obj[i] != chk) {
+					obj[i].checked = false;
+				}
+			}
+		}
+		function NoMultiChk2(chk) {
+			let obj = document.getElementsByName("gender");
+			for (var i = 0; i < obj.length; i++) {
+				if (obj[i] != chk) {
+					obj[i].checked = false;
+				}
+			}
+		}
+	</script>
 </body>
 </html>
