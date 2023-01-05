@@ -161,6 +161,7 @@ header {
 	border-bottom: 1px solid silver;
 	line-height: 20px;
 }
+
 .filter-unchecked:hover {
 	cursor: pointer;
 }
@@ -168,7 +169,6 @@ header {
 .filter-title {
 	margin-bottom: 10px;
 }
-
 
 .menu {
 	margin-bottom: 2px;
@@ -187,6 +187,16 @@ header {
 
 span {
 	margin-left: 4px;
+}
+
+.filter-tag {
+	width: 100%;
+	height: auto;
+}
+
+.filter-tag div {
+	width: auto;
+	height: auto;
 }
 
 section {
@@ -287,26 +297,26 @@ footer a {
 					</div>
 					<div class="filter-menu">
 						<ul class="menu-list">
-							<li class="menu"><input id="menu-link" class="menu-link"
-								type="checkbox" name="category"
+							<li class="menu"><input id="menu-link" class="menu-link box"
+								type="checkbox" name="category" value="신발"
 								onclick="NoMultiChk(this),display2()" /><label for="menu-link"><span>신발</span></label>
 
 								<ul id="menu-list2" class="menu-list2">
 									<li class="menu"><input class="box" id="sneakers"
-										type="checkbox" name="category" onclick="NoMultiChk(this)" /><label
-										for="sneakers"><span>스니커즈</span></label></li>
-									<li class="menu"><input class="box" id="boots"
+										value="스니커즈" type="checkbox" name="category"
+										onclick="NoMultiChk(this)" /><label for="sneakers"><span>스니커즈</span></label></li>
+									<li class="menu"><input class="box" id="boots" value="부츠"
 										type="checkbox" name="category" onclick="NoMultiChk(this)" /><label
 										for="boots"><span>부츠</span></label></li>
 									<li class="menu"><input class="box" id="derby"
-										type="checkbox" name="category" onclick="NoMultiChk(this)" /><label
-										for="derby"><span>더비/레이스업</span></label></li>
+										value="더비/레이스업" type="checkbox" name="category"
+										onclick="NoMultiChk(this)" /><label for="derby"><span>더비/레이스업</span></label></li>
 									<li class="menu"><input class="box" id="loafer"
-										type="checkbox" name="category" onclick="NoMultiChk(this)" /><label
-										for="loafer"><span>로퍼/플랫</span></label></li>
+										value="로퍼/플랫" type="checkbox" name="category"
+										onclick="NoMultiChk(this)" /><label for="loafer"><span>로퍼/플랫</span></label></li>
 									<li class="menu"><input class="box" id="sandal"
-										type="checkbox" name="category" onclick="NoMultiChk(this)" /><label
-										for="sandal"><span>샌들/슬리퍼</span></label></li>
+										value="샌들/슬리퍼" type="checkbox" name="category"
+										onclick="NoMultiChk(this)" /><label for="sandal"><span>샌들/슬리퍼</span></label></li>
 								</ul></li>
 						</ul>
 					</div>
@@ -395,13 +405,13 @@ footer a {
 				</div>
 				<div>
 					<hr />
-					<button>필터링하기</button>
+					<button onclick="getCheckboxValue()">필터링하기</button>
 				</div>
 			</div>
 
 			<section>
 				<article class="atone">
-
+					<div id="filter-tag" class="filter-tag"></div>
 					<div>
 						<a href="./detail.html"><img alt="" src="./images/htmlimg.jpg"
 							style="width: 200px; height: 200px;"></a>
@@ -444,18 +454,18 @@ footer a {
 				var box = boxs.item(i);
 				box.checked = false;
 			}
-
+			
+			let reset = document.querySelector(".tag-item");
+			reset.parentNode.innerHTML = "";
 		}
-
 		function display() {
 			var con = document.querySelector(".menu-list");
-			if (con.style.display == 'none') {
-				con.style.display = 'block';
-			} else {
+			if (con.style.display == 'block') {
 				con.style.display = 'none';
+			} else {
+				con.style.display = 'block';
 			}
 		}
-		con.addEventListener("click", display);
 
 		function display2() {
 			var chkVal = document.getElementById('menu-link');
@@ -470,53 +480,48 @@ footer a {
 
 		function display3() {
 			var con3 = document.querySelector(".menu-list3");
-			if (con3.style.display == 'none') {
-				con3.style.display = 'block';
-			} else {
+			if (con3.style.display == 'block') {
 				con3.style.display = 'none';
+			} else {
+				con3.style.display = 'block';
 			}
 		}
-		con3.addEventListener("click", display3);
 
 		function display4() {
 			var con4 = document.querySelector(".menu-list4");
-			if (con4.style.display == 'none') {
-				con4.style.display = 'block';
-			} else {
+			if (con4.style.display == 'block') {
 				con4.style.display = 'none';
+			} else {
+				con4.style.display = 'block';
 			}
 		}
-		con4.addEventListener("click", display4);
 
 		function display5() {
 			var con5 = document.querySelector(".menu-list5");
-			if (con5.style.display == 'none') {
-				con5.style.display = 'block';
-			} else {
+			if (con5.style.display == 'block') {
 				con5.style.display = 'none';
+			} else {
+				con5.style.display = 'block';
 			}
 		}
-		con5.addEventListener("click", display5);
 
 		function display6() {
 			var con6 = document.querySelector(".menu-list6");
-			if (con6.style.display == 'none') {
-				con6.style.display = 'block';
-			} else {
+			if (con6.style.display == 'block') {
 				con6.style.display = 'none';
+			} else {
+				con6.style.display = 'block';
 			}
 		}
-		con6.addEventListener("click", display6);
 
 		function display7() {
 			var con7 = document.querySelector(".menu-list7");
-			if (con7.style.display == 'none') {
-				con7.style.display = 'block';
-			} else {
+			if (con7.style.display == 'block') {
 				con7.style.display = 'none';
+			} else {
+				con7.style.display = 'block';
 			}
 		}
-		con7.addEventListener("click", display7);
 
 		function NoMultiChk(chk) {
 			let obj = document.getElementsByName("category");
@@ -534,6 +539,40 @@ footer a {
 				}
 			}
 		}
+
+		function getCheckboxValue() {
+			let reset = document.querySelector(".tag-item");
+			let tag = document.querySelector(".filter-tag");
+			let query = 'input[type="checkbox"]:checked';
+			let selectedEls = document.querySelectorAll(query);
+
+			if (reset == null) {
+				for (var i = 0; i < selectedEls.length; i++) {
+
+					var filter = document.getElementById('filter-tag');
+					var a = selectedEls[i].value
+					filter.innerHTML = filter.innerHTML
+							+ '<div class="tag-item"><span>' + a + '</span><button class="delButton" onclick="delFilterOne(event)">X</button></div>';
+				}
+			} else {
+				reset.parentNode.innerHTML = "";
+				for (var i = 0; i < selectedEls.length; i++) {
+
+					var filter = document.getElementById('filter-tag');
+					var a = selectedEls[i].value
+					filter.innerHTML = filter.innerHTML
+							+ '<div class="tag-item"><span>' + a + '</span><button class="delButton" onclick="delFilterOne(event)">X</button></div>';
+				}
+			}
+ 		}
+		
+		function delFilterOne(event) {
+			let removeOne = event.target.parentElement; 
+		    removeOne.remove();
+		}
+
+		
+
 	</script>
 </body>
 </html>
