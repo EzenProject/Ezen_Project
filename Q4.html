@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>HTML5 레이아웃</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="./js/lib/jquery-ui-1.10.3.custom.min.js"></script>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	line-height: 20px;
+	font-size: 12px;
+}
+
+nav ul li {
+	list-style-type: none;
+	display: inline;
+	font-weight: bold;
+	margin-right: 20px;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+nav ul li a:hover {
+	background-color: pink;
+}
+
+#container {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+header {
+	width: 100%;
+	height: 130px;
+	background-color: rgb(231, 231, 231);
+	position: relative;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+
+.hdTop {
+	/* 	border: 1px solid black; */
+	height: 30px;
+	position: relative;
+}
+
+.hdTop nav {
+	display: flex;
+	position: absolute;
+	top: 0;
+	right: -10px;
+}
+
+.hdBottom {
+	/* 	border: 1px solid black; */
+	height: 30px;
+	position: relative;
+}
+
+.hdBottom nav {
+	display: flex;
+	position: absolute;
+	bottom: 0;
+	right: -10px;
+}
+
+.hdMid {
+	/* border: 1px solid black; */
+	height: 64px;
+	position: relative;
+}
+
+.hdMid h1 {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	font-style: italic;
+}
+
+.searchTab {
+	/* border: 1px solid black; */
+	position: absolute;
+	top: 30px;
+	left: 450px;
+}
+
+.searchTab input {
+	width: 300px;
+	font-size: 30px;
+	border: none;
+	border-bottom: 3px solid black;
+	background-color: rgb(231, 231, 231);
+}
+
+.searchTab button {
+	border: none;
+	background-color: rgb(231, 231, 231);
+}
+
+.searchTab button :hover {
+	cursor: pointer;
+}
+
+#adadad {
+	margin: 0 auto;
+	background-color: pink;
+	width: 100%;
+	height: 400px;
+	text-align: center;
+}
+
+
+.slideshow{
+	background: rgb(0,0,0);
+	height: 465px;
+	overflow: hidden; /* 이미지의 최상위 박스에 적용*/
+	position: relative;
+	margin: 0 auto;
+	
+}
+
+.slideshow-slides{
+	height: 100%;
+	position: absolute;
+	width: 100%;
+}
+
+.slideshow-slides .slide{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+}
+
+.slideshow-slides .slide img{
+		left: 50%;
+	margin-left: -800px;
+	position: absolute;
+}
+
+.slideshow-nav a,
+.slideshow-indicator a{
+	overflow: hidden;
+}
+
+.slideshow-nav a::before,
+.slideshow-indicator a::before{
+	content: url(./img/sprites.png);
+	display: inline-block;
+}
+
+.slideshow-nav a{
+	position : absolute;
+	top: 50%;
+	left: 51%;
+	width: 72px;
+	height: 72px;
+	margin-top: -40px;
+	font-style: bold;
+	color: white;
+}
+
+.slideshow-nav a.prev{
+	margin-left: -600px;
+}
+
+.slideshow-nav a.prev::before{
+	
+	margin-top: -20px;
+}
+
+.slideshow-nav a.next{
+	margin-left: 500px;
+}
+
+.slideshow-nav a.next::before{
+	margin-top: -20px;
+	margin-left: -80px;
+}
+
+.slideshow-nav a.disable{
+	display: none;
+}
+
+.slideshow-indicator{
+	bottom: 30px;
+	height: 16px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	text-align: center; 
+}
+
+.slideshow-indicator a{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.slideshow-indicator a::before{
+	margin-left: -110px;
+}
+.slideshow-indicator a.active{
+	cursor: default;
+}
+
+.slideshow-indicator a.active::before{
+	margin-left: -130px;
+}
+
+
+section {
+	margin: 0 auto;
+	width: 100%;
+	margin-top: 30px;
+}
+
+section article {
+	margin-bottom: 30px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	padding: 10px;
+	height: 400px;
+	text-align: center;
+}
+
+section article button {
+	margin-top: 20px;
+}
+
+section article div {
+	border: 1px solid black;
+	width: 250px;
+	height: 350px;
+	float: left;
+	margin: 0 20px;
+}
+/* aside {
+	float: left;
+	width: 200px;
+	margin: 50px 0;
+	border: 3px solid green;
+	text-align: center;
+}
+
+aside img {
+	margin-top: 10px;
+	width: 150px;
+	height: 150px;
+}
+
+aside img:nth-child(2) {
+	width: 110px;
+	height: 150px;
+}
+ */
+footer {
+	clear: both;
+	width: 100%;
+	background-color: #333;
+	color: white;
+	text-align: center;
+	height: 60px;
+}
+
+footer p {
+	font-size: 1em;
+	line-height: 60px;
+}
+</style>
+</head>
+<body>
+	<div id="container">
+		<header>
+			<div class="hdTop">
+				<nav>
+					<ul>
+						<li><a href="#">고객센터</a></li>
+						<li style="display: none;"><a href="#">관심상품</a></li>
+						<li style="display: none;"><a href="#">마이페이지</a></li>
+						<li><a href="#" onclick="">로그인</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="hdMid">
+				<h1>
+					<a href="./Q4.html">PARIS</a>
+				</h1>
+				<div class="searchTab">
+					<input type="search" placeholder="search..." />
+					<button>
+						<img src="./images/button2.png" alt=""
+							style="height: 26px; width: 40px;" />
+					</button>
+				</div>
+			</div>
+			<div class="hdBottom">
+				<nav>
+					<ul>
+						<li><a href="./stylepage.html">STYLE</a></li>
+						<li><a href="./Q5.html">SHOP</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<aside id="adadad">
+			<div class="slideshow">
+				<div class="slideshow-slides">
+					<a href="#" class="slide" id="slide-1"><img
+						src="./img/slide-1.jpg" alt="" width="1600" height="465" /></a> <a
+						href="#" class="slide" id="slide-2"><img
+						src="./img/slide-2.jpg" alt="" width="1600" height="465" /></a> <a
+						href="#" class="slide" id="slide-3"><img
+						src="./img/slide-3.jpg" alt="" width="1600" height="465" /></a> <a
+						href="#" class="slide" id="slide-4"><img
+						src="./img/slide-4.jpg" alt="" width="1600" height="465" /></a>
+				</div>
+				<div class="slideshow-nav">
+					<a href="#" class="prev">Prev</a> <a href="#" class="next">Next</a>
+				</div>
+				<div class="slideshow-indicator"></div>
+			</div>
+		</aside>
+		<div class="inner">
+
+			<section>
+				<h2>인기ITEM</h2>
+				<article class="atone">
+
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<button>더보기</button>
+				</article>
+				<h2>인기STYLE</h2>
+				<article class="attwo">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</article>
+
+			</section>
+			<!-- <aside>
+				<img src="images/htmlimg.jpg" alt=""> <img
+					src="images/cssimg.jpg" alt=""> <img src="images/jsimg.jpg"
+					alt="">
+			</aside> -->
+		</div>
+		<footer>
+			<p>
+				Copyright <span>kknjso@naver.com</span>
+			</p>
+		</footer>
+	</div>
+	<script>
+		jQuery(function($) {
+			$('.slideshow')
+					.each(
+							function() {
+								let $container = $(this);
+								let $slideGroup = $container
+										.find('.slideshow-slides');
+								let $slides = $slideGroup.find('.slide');
+								let $nav = $container.find('.slideshow-nav');
+								let $indicator = $container
+										.find('.slideshow-indicator');
+
+								let slideCount = $slides.length, innerHTMLTag = '', currentIndex = 0, duration = 500, interval = 5000, timerId;
+
+								$slides.each(function(ind) {
+									$(this).css({
+										left : 100 * ind + '%'
+									});
+									innerHTMLTag = innerHTMLTag
+											+ `<a href="#">${ind+1}</a>`;
+								});
+								$indicator.html(innerHTMLTag);
+								//--------------------변수 선언
+								function goToSlide(index) {
+									$slideGroup.animate({
+										left : -100 * index + "%"
+									}, duration);
+									currentIndex = index;
+									updateNav();
+								}
+
+								function updateNav() {
+									let $navPrev = $nav.find('.prev');
+									let $navNext = $nav.find('.next');
+
+									if (currentIndex === 0) { //첫번째 이미지가 화면에 나온다면
+										$navPrev.addClass('disable');
+									} else {
+										$navPrev.removeClass('disable');
+									}
+
+									if (currentIndex === slideCount - 1) { //마지막 이미지가 화면에 나온다면
+										$navNext.addClass('disable');
+									} else {
+										$navNext.removeClass('disable');
+									}
+
+									$indicator.find('a').removeClass('active')
+											.eq(currentIndex)
+											.addClass('active');
+								}
+
+								function startTimer() {
+									timerId = setInterval(function() {
+										let nextIndex = (currentIndex + 1)
+												% slideCount
+										goToSlide(nextIndex)
+									}, interval);
+								}
+
+								function endTimer() {
+									clearInterval(timerId);
+								}
+								// ==== 필요한 함수들을 정의해 둠=====
+
+								$nav.on('click', 'a', function(event) {
+									event.preventDefault();
+									if ($(this).hasClass('prev')) { //이전버튼 클릭
+										goToSlide(currentIndex - 1);
+									} else { //다음버튼 클릭했다는 이야기...
+										goToSlide(currentIndex + 1);
+									}
+								});
+
+								$indicator.on('click', 'a', function(event) {
+									event.preventDefault();
+									if (!$(this).hasClass('active')) {
+										goToSlide($(this).index());
+									}
+								});
+
+								$container.on({
+									mouseenter : endTimer,
+									mouseleave : startTimer
+								});
+
+								goToSlide(currentIndex);
+								startTimer();
+							});
+		});
+	</script>
+</body>
+</html>
