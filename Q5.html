@@ -38,7 +38,7 @@ a {
 header {
 	width: 100%;
 	height: 130px;
-	background-color: rgb(231, 231, 231);
+	background-color: white;
 	text-align: center;
 	position: relative;
 	position: sticky;
@@ -127,12 +127,12 @@ header {
 	font-size: 30px;
 	border: none;
 	border-bottom: 3px solid black;
-	background-color: rgb(231, 231, 231);
+	background-color: white;
 }
 
 .searchTab button {
 	border: none;
-	background-color: rgb(231, 231, 231);
+	background-color: white;
 }
 
 .searchTab button :hover {
@@ -144,6 +144,23 @@ header {
 	display: flex;
 }
 
+.navBar-item{
+	display: inline-block;
+	text-align: center;
+	margin-top: 15px;
+}
+.navBar-list{
+	justify-content: space-around;
+	display: flex;
+	
+}
+.navBar-quick div {
+	height: 80px;
+	width: 80px;
+	border-radius: 40px;
+	background: pink;
+	margin-bottom: 8px;
+}
 .filter {
 	margin-top: 50px;
 	width: 170px;
@@ -183,20 +200,11 @@ header {
 .menu-list2 {
 	display: none;
 	margin-left: 10px;
+
 }
 
 span {
 	margin-left: 4px;
-}
-
-.filter-tag {
-	width: 100%;
-	height: auto;
-}
-
-.filter-tag div {
-	width: auto;
-	height: auto;
 }
 
 section {
@@ -221,6 +229,33 @@ section article div {
 	height: 200px;
 	float: left;
 	margin: 18px;
+}
+
+.filter-tag {
+	width: 100%;
+	height: auto;
+	border: none;
+}
+
+.filter-tag div {
+	width: auto;
+	height: auto;
+	border: none;
+	background: #F4F4F4;
+	border-radius: 10px;
+	padding: 5px;
+	margin: 5px;
+}
+
+.filter-tag div button {
+	margin-left: 20px;
+	margin-right: 6px;
+	border: none;
+	background: #F4F4F4;
+}
+
+.filter-tag div button:hover {
+	cursor: pointer;
 }
 
 footer {
@@ -254,7 +289,7 @@ footer a {
 			</div>
 			<div class="hdMid">
 				<h1>
-					<a href="./Q4.html">PARIS</a>
+					<a href="./Q4.html">MAPLE</a>
 				</h1>
 				<h1 id="shophome">SHOP</h1>
 				<div class="searchTab">
@@ -277,12 +312,24 @@ footer a {
 		<div class="navBar">
 			<nav>
 				<ul>
-					<li><a href="#">신발</a></li>
+					<li><a href="javascript:disappear();">신발</a></li>
 					<li><a href="#">의류</a></li>
 					<li><a href="#">악세서리</a></li>
 					<li><a href="#">라이프</a></li>
 				</ul>
 			</nav>
+		</div>
+		<div class="navBar-quick" >
+			<ul class="navBar-list">
+				<li class="navBar-item"><div></div><p>스니커즈</p></li>    <!-- div 태그  img 태그로 바꾸면될듯 -->
+				<li class="navBar-item"><div></div><p>부츠</p></li>
+				<li class="navBar-item"><div></div><p>더비</p></li>
+				<li class="navBar-item"><div></div><p>레이스업</p></li>
+				<li class="navBar-item"><div></div><p>로퍼</p></li>
+				<li class="navBar-item"><div></div><p>플랫</p></li>
+				<li class="navBar-item"><div></div><p>샌들</p></li>
+				<li class="navBar-item"><div></div><p>슬리퍼</p></li>
+			</ul>
 		</div>
 		<div class=inner>
 			<div class="filter">
@@ -447,6 +494,7 @@ footer a {
 		</footer>
 	</div>
 	<script type="text/javascript">
+		
 		function unchecked() {
 			var boxs = document.getElementsByClassName("box");
 			document.querySelector(".menu-link").checked = false;
@@ -454,7 +502,7 @@ footer a {
 				var box = boxs.item(i);
 				box.checked = false;
 			}
-			
+
 			let reset = document.querySelector(".tag-item");
 			reset.parentNode.innerHTML = "";
 		}
@@ -552,7 +600,9 @@ footer a {
 					var filter = document.getElementById('filter-tag');
 					var a = selectedEls[i].value
 					filter.innerHTML = filter.innerHTML
-							+ '<div class="tag-item"><span>' + a + '</span><button class="delButton" onclick="delFilterOne(event)">X</button></div>';
+							+ '<div class="tag-item"><span>'
+							+ a
+							+ '</span><button class="delButton" onclick="delFilterOne(event)">Ⅹ</button></div>';
 				}
 			} else {
 				reset.parentNode.innerHTML = "";
@@ -561,18 +611,17 @@ footer a {
 					var filter = document.getElementById('filter-tag');
 					var a = selectedEls[i].value
 					filter.innerHTML = filter.innerHTML
-							+ '<div class="tag-item"><span>' + a + '</span><button class="delButton" onclick="delFilterOne(event)">X</button></div>';
+							+ '<div class="tag-item"><span>'
+							+ a
+							+ '</span><button class="delButton" onclick="delFilterOne(event)">Ⅹ</button></div>';
 				}
 			}
- 		}
-		
-		function delFilterOne(event) {
-			let removeOne = event.target.parentElement; 
-		    removeOne.remove();
 		}
 
-		
-
+		function delFilterOne(event) {
+			let removeOne = event.target.parentElement;
+			removeOne.remove();
+		}
 	</script>
 </body>
 </html>
